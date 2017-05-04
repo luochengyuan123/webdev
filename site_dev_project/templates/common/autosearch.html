@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+{#    <link rel="stylesheet" type="text/css" href="../static/site.css">#}
+    <script src="../static/js/jquery-1.11.1.min.js"></script>
+      <style type="text/css">
+        * {
+            margin: 0 auto;
+            padding: 0;
+        }
+        .l {
+            float: left
+        }
+        .center {
+            width: 510px;
+            height: 200px;
+            padding: 40px;
+        }
+        #search_key {
+            width: 400px;
+            height: 40px;
+            font-size: 16px;
+            line-height: 40px;
+        }
+        #search_btn {
+            cursor: pointer;
+            width: 102px;
+            height: 44px;
+            line-height: 44px;
+            padding: 0;
+            border: 0;
+            background: none;
+            background-color: #38f;
+            font-size: 16px;
+            color: white;
+            box-shadow: none;
+            font-weight: normal;
+        }
+        #dat_list {
+            width: 400px;
+            height: 99px;
+            border: 1px solid #c5c5c5;
+            float: left;
+            display: none;
+        }
+        #dat_list ul {
+            padding: 1px;
+            margin: 0;
+            list-style-type: none;
+        }
+        #dat_list li {
+            list-style: none;
+            line-height: 25px;
+        }
+        #dat_list li:hover {
+            background-color: #c5c5c5;
+        }
+    </style>
+</head>
+<body>
+<div class="center">
+    <input class="l" id="search_key" align="right" type="text" name="data" onkeyup="search_ajax()">
+    <input class="l" id="search_btn" type="submit" value="百度一下">
+    <div id="dat_list">
+        <ul name="word" id="word">
+
+        </ul>
+    </div>
+</div>
+</body>
+<script type="application/javascript">
+    function search_ajax(){
+        var dat = $('#search_key').val()
+        if(dat){
+            $.get('/search/', {'word': dat}, function(dat){
+                var str = ''
+                $.each($.parseJSON(dat), function(k,v){
+                    str += '<li id="this_li" onclick="fun(this)">'+ v.fields.data+'</li>';
+                })
+                if(str != ''){
+                    $('#dat_list').css('display','block');
+                    $('#word').html(str)
+                }else{
+                    $('#dat_list').css('display','none');
+                }
+            })
+        }
+    }
+    function fun(obj){
+        $("#search_key").val($(obj).html());
+        $('#dat_list').css('display','none');
+    }
+</script>
+
+
+</html>

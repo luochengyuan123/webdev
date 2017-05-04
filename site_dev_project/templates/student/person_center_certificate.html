@@ -1,0 +1,130 @@
+{% extends 'student/base_student.html' %}
+{% load staticfiles %}
+
+{% block comment %}
+  <div class="container uc-boxb">
+    <div class="uc-h1">证书列表</div>
+    <div class="row certificate">
+      <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <div class="certificate-img"><img src="{% static 'test/16.jpg' %}"><a href="" class="big-download"><span>Android应用开发工程师</span><img src="{% static 'images/big-dn.png' %}"></a></div>
+      </article>
+      <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <div class="certificate-img"><img src="{% static 'test/16.jpg' %}"><a href="" class="big-download"><span>Android应用开发工程师</span><img src="{% static 'images/big-dn.png' %}"></a></div>
+      </article>
+      <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <div class="certificate-img"><img src="{% static 'test/16.jpg' %}"><a href="" class="big-download"><span>Android应用开发工程师</span><img src="{% static 'images/big-dn.png' %}"></a></div>
+      </article>
+      <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <div class="certificate-img"><img src="{% static 'test/16.jpg' %}"><a href="" class="big-download"><span>Android应用开发工程师</span><img src="{% static 'images/big-dn.png' %}"></a></div>
+      </article>
+      <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <div class="certificate-img"><img src="{% static 'test/16.jpg' %}"><a href="" class="big-download"><span>Android应用开发工程师</span><img src="{% static 'images/big-dn.png' %}"></a></div>
+      </article>
+      <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <div class="certificate-img"><img src="{% static 'test/16.jpg' %}"><a href="" class="big-download"><span>Android应用开发工程师</span><img src="{% static 'images/big-dn.png' %}"></a></div>
+      </article>
+    </div>
+    <div class="page-bg-w">
+      <div class="row v5-pages">
+        <div class="col-sm-12 v5-pages-list">
+          <ul class="row fr">
+            <li><a href="" class="v5-icon v5-icon-prev"></a></li>
+            <li><a href="" class="page-num active">1</a></li>
+            <li><a href="" class="page-num">2</a></li>
+            <li><a href="" class="page-num">3</a></li>
+            <li><a href="" class="page-num">4</a></li>
+            <li><a href="" class="page-num">5</a></li>
+            <li><a href="" class="v5-icon v5-icon-next"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock comment %}
+
+
+<!--登录-->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="loginModalLabel">登录</h4>
+      </div>
+      <div class="modal-body">
+        <section class="box-login v5-input-txt" id="box-login">
+          <ul>
+            <li class="form-group has-error"><input type="text" class="form-control" placeholder="请输入邮箱账号/手机号"></li>
+            <li class="form-group"><input type="password" class="form-control" placeholder="请输入密码"></li>
+          </ul>
+          <p class="good-tips"><a href="#" data-toggle="modal" data-target="#forgetpswModal" id="btnForgetpsw" class="fr">忘记密码？</a>还没有账号？<a href="" data-toggle="modal" data-target="#registerModal" id="btnRegister">立即注册</a></p>
+          <div>
+            <button type="button" class="btn btn-micv5 btn-block">登录</button>
+          </div>
+          <div class="tips-error bg-danger">错误提示</div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+<!--找回密码-->
+<div class="modal fade" id="forgetpswModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="forgetpswModalLabel">找回密码</h4>
+      </div>
+      <div class="modal-body">
+        <section class="box-forgetpsw v5-input-txt" id="box-forgetpsw">
+          <ul>
+            <li class="form-group has-error"><input type="text" class="form-control" placeholder="请输入注册邮箱账号或手机号码"></li>
+          </ul>
+          <div>
+            <button type="button" class="btn btn-micv5 btn-block">提交</button>
+          </div>
+          <div class="tips-error bg-danger">错误提示</div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--注册-->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="registerModalLabel">注册</h4>
+      </div>
+      <div class="modal-body">
+        <section class="box-register v5-input-txt" id="box-register">
+          <ul class="register-tabs" role="tablist">
+            <li class="active"><a href="#register-email" role="tab" data-toggle="tab">邮箱注册</a></li>
+            <li><a href="#register-mobile" role="tab" data-toggle="tab">手机注册</a></li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="register-email">
+            	<div class="form-group"><input type="text" class="form-control" placeholder="请输入邮箱账号"></div>
+              <div class="form-group"><input type="password" class="form-control" placeholder="请输入密码"></div>
+              <div class="form-group cf"><input type="text" class="form-control form-control-captcha fl" placeholder="请输入验证码"><span class="v5-yzm fr"><a href=""><img src="test/yzm.jpg">换一张</a></span></div>            	
+            </div>
+            <div class="tab-pane" id="register-mobile">
+            	<div class="form-group cf"><input type="text" class="form-control form-control-phone fl" placeholder="请输入手机号"><span class="fr"><button type="button" class="btn btn-micv5 btn-send">发送验证码</button></span></div>
+              <div class="form-group"><input type="text" class="form-control" placeholder="请输入短信验证码"></div>
+              <div class="form-group"><input type="password" class="form-control" placeholder="请输入密码"></div>
+              <div class="form-group cf"><input type="text" class="form-control form-control-captcha fl" placeholder="请输入验证码"><span class="v5-yzm fr"><a href=""><img src="test/yzm.jpg">换一张</a></span></div>
+            </div>
+          </div>
+          <p class="good-tips">已经有账号？<a href="#" data-toggle="modal" data-target="#loginModal" id="btnLogin">立即登录</a></p>
+          <div>
+            <button type="button" class="btn btn-micv5 btn-block">注册并登录</button>
+          </div>
+          <div class="tips-error bg-danger">错误提示</div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+
